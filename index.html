@@ -69,6 +69,39 @@
             background: linear-gradient(to top, var(--color-highlight-light) 40%, transparent 40%);
             padding: 0 0.25rem;
         }
+
+        /* --- Video Card Styles --- */
+        .video-card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgb(0 0 0 / 0.15);
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        .video-card-content {
+            padding: 1rem;
+        }
+        .video-card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            margin-bottom: 0.5rem;
+        }
+        .video-card-description {
+            font-size: 0.8rem;
+            color: var(--color-body);
+            line-height: 1.4;
+        }
         
         /* --- Product Card Styles --- */
         .product-card {
@@ -236,6 +269,13 @@
             color: #111827;
         }
 
+        /* --- Mobile Responsive for Videos --- */
+        @media (max-width: 768px) {
+            .video-card iframe {
+                height: 180px;
+            }
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -246,6 +286,7 @@
             <a href="#" class="text-2xl font-bold accent-color">Arjun K Raghav</a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-gray-600 hover:accent-color font-medium transition duration-300">About</a>
+                <a href="#videos" class="text-gray-600 hover:accent-color font-medium transition duration-300">Videos</a>
                 <a href="#products" class="text-gray-600 hover:accent-color font-medium transition duration-300">Products</a>
                 <a href="#calculators" class="text-gray-600 hover:accent-color font-medium transition duration-300">Calculators</a>
                 <a href="#testimonials" class="text-gray-600 hover:accent-color font-medium transition duration-300">Testimonials</a>
@@ -256,6 +297,7 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white">
             <a href="#about" class="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#videos" class="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">Videos</a>
             <a href="#products" class="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">Products</a>
             <a href="#calculators" class="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">Calculators</a>
             <a href="#testimonials" class="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">Testimonials</a>
@@ -282,7 +324,7 @@
             </div>
         </section>
 
-        <!-- =========== About Section =========== -->
+       <!-- =========== About Section =========== -->
 <section id="about" class="bg-white overflow-hidden">
     <div class="container mx-auto px-4 sm:px-6 py-20 md:py-32 relative">
         <div class="grid md:grid-cols-5 gap-12 items-center relative z-10">
@@ -295,11 +337,24 @@
                 <p class="text-base sm:text-lg mt-6 max-w-2xl">
                     My vision is to help Malayali families invest wisely and build lasting wealth. I aim to empower over 10,000 families in the coming years through the right financial guidance.
                 </p>
+
+                <!-- Expertise Bullet Points -->
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-accent-color rounded-full mr-3"></div>
+                        <span class="text-base font-medium">Helping Malayali Families and NRIs to invest wisely</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-accent-color rounded-full mr-3"></div>
+                        <span class="text-base font-medium">Lumpsum Investment Specialist | SIP Planning</span>
+                    </div>
+                    
+                    
+                </div>
                 
                 <!-- AMFI Registration Details -->
                 <div class="mt-6 p-4 bg-gray-50 rounded-lg border-l-4 border-accent-color">
                     <p class="text-sm text-gray-700">
-                        <span class="font-semibold">SEBI Registered Investment Advisor</span><br>
                         <span class="font-medium">Name:</span> Arjun K | 
                         <span class="font-medium">AMFI Regn No:</span> ARN-323175 | 
                         <span class="font-medium">EUIN:</span> E612434
@@ -309,7 +364,7 @@
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                     <div class="flex items-center gap-4">
                         <i class="fas fa-chart-line text-2xl accent-color"></i>
-                        <div><span class="font-bold text-lg" style="color: var(--color-dark);">15+ Years</span><br>Market Experience</div>
+                        <div><span class="font-bold text-lg" style="color: var(--color-dark);">7+ Years</span><br>Market Experience</div>
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-users text-2xl accent-color"></i>
@@ -317,7 +372,7 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-trophy text-2xl accent-color"></i>
-                        <div><span class="font-bold text-lg" style="color: var(--color-dark);">Top Performer</span><br>Award 2023</div>
+                        <div><span class="font-bold text-lg" style="color: var(--color-dark);">Kerala's Leading</span><br>Investor</div>
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-bullseye text-2xl accent-color"></i>
@@ -334,6 +389,108 @@
         </div>
     </div>
 </section>
+<!-- Simple HR Line -->
+<hr class="container mx-auto max-w-4xl border-t border-gray-300 my-12">
+
+
+
+        <!-- =========== Educational Videos Section =========== -->
+<section id="videos" class="py-20 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold" style="color: var(--color-dark);">Please Watch These Videos</h2>
+            <p class="text-base sm:text-lg mt-4 max-w-3xl mx-auto">Essential knowledge about mutual funds and investments to help you make informed financial decisions</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Video 1 -->
+                <div class="video-card reveal">
+                    <iframe src="https://www.youtube.com/embed/wDMFCjH7QFE" 
+                            title="Mutual Fund Basics Video 1" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">Benefits Mutual Fund</h3>
+                        <p class="video-card-description">Learn the basic concepts and principles of mutual fund investing</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card reveal" style="transition-delay: 100ms;">
+                    <iframe src="https://www.youtube.com/embed/6zmiWq2TtWY" 
+                            title="Mutual Fund Basics Video 2" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">What is Mutual Fund ?</h3>
+                        <p class="video-card-description">A mutual fund pools money from investors to invest in diversified assets.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card reveal" style="transition-delay: 200ms;">
+                    <iframe src="https://www.youtube.com/embed/2R3gj_jRLYc" 
+                            title="Mutual Fund Basics Video 3" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">SIP Benefits</h3>
+                        <p class="video-card-description">Learn how to identify and manage risks to make smarter, more secure investment decisions.</p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card reveal" style="transition-delay: 300ms;">
+                    <iframe src="https://www.youtube.com/embed/NXGHqVCPKwY" 
+                            title="Mutual Fund Basics Video 4" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">What is Inflation ?</h3>
+                        <p class="video-card-description">Inflation is the rise in prices over time, reducing your money’s purchasing power.</p>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card reveal" style="transition-delay: 400ms;">
+                    <iframe src="https://www.youtube.com/embed/cWsNTQOo18s" 
+                            title="Mutual Fund Basics Video 5" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">Power of Compounding</h3>
+                        <p class="video-card-description">Compounding grows your money by earning returns on returns over time.</p>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card reveal" style="transition-delay: 500ms;">
+                    <iframe src="https://www.youtube.com/embed/fBtgUiemvaI" 
+                            title="Mutual Fund Basics Video 6" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-card-content">
+                        <h3 class="video-card-title">How to Invest in MF ?</h3>
+                        <p class="video-card-description">Choose a fund, complete KYC, and start investing easily online.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+<!-- Simple HR Line -->
+<hr class="container mx-auto max-w-4xl border-t border-gray-300 my-12">
+
+
 
 
         <!-- =========== Products Section =========== -->
@@ -653,9 +810,8 @@
                 <!-- AMFI Details -->
                 <div class="bg-gray-800 p-4 rounded-lg mb-6">
                     <p class="text-sm text-gray-400">
-                        <span class="font-semibold text-white">SEBI Registered Investment Advisor</span><br>
                         <span class="font-medium">Name:</span> Arjun K | 
-                        <span class="font-medium">AMFI Regn No:</span> ARN-323175 | 
+                        <span class="font-medium"> Regn No:</span> ARN-323175 | 
                         <span class="font-medium">EUIN:</span> E612434
                     </p>
                 </div>
@@ -666,6 +822,7 @@
                 <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul class="space-y-3">
                     <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                    <li><a href="#videos" class="text-gray-300 hover:text-white transition duration-300">Educational Videos</a></li>
                     <li><a href="#products" class="text-gray-300 hover:text-white transition duration-300">Investment Products</a></li>
                     <li><a href="#calculators" class="text-gray-300 hover:text-white transition duration-300">Financial Tools</a></li>
                     <li><a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300">Testimonials</a></li>
@@ -710,7 +867,7 @@
                 <!-- Copyright -->
                 <div class="text-center md:text-right">
                     <p class="text-gray-400 text-sm mb-2">
-                        Building wealth for <span class="font-semibold text-white">500+ families</span> since 2009
+                        Building wealth for <span class="font-semibold text-white">500+ families</span> since 2018
                     </p>
                     <p class="text-gray-400 text-sm">
                         &copy; 2024 Arjun K Raghav. All Rights Reserved.
